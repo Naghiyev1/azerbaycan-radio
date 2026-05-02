@@ -1,9 +1,9 @@
-const CACHE_NAME = "azerbaycan-radio-v1";
+const CACHE_NAME = "azerbaycan-radio-v1-1";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./style.css",
-  "./app.js",
+  "./style-v1-1.css",
+  "./app-v1-1.js",
   "./icon.svg",
   "./manifest.json"
 ];
