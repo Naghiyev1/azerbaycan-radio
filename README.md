@@ -72,3 +72,60 @@ app-v1-1.js
 The original `style.css` and `app.js` are also included as fallback copies.
 
 If the page appears unstyled, make sure all files are uploaded to the root of the GitHub repository, not inside an extra folder.
+
+
+## v1.2 Night Mode fix
+
+This version makes Day Mode and Night Mode visually distinct.
+
+- Day Mode: lighter silver/blue car audio look
+- Night Mode: dark black/blue illuminated dashboard look
+
+It also uses versioned files:
+
+```text
+style-v1-2.css
+app-v1-2.js
+```
+  icon.svg
+  manifest.json
+  service-worker.js
+```
+
+## Deploy on GitHub Pages
+
+1. Create a public GitHub repository called `azerbaycan-radio`.
+2. Upload all files to the root of the repository.
+3. Go to **Settings**.
+4. Go to **Pages**.
+5. Select:
+   - Source: `Deploy from a branch`
+   - Branch: `main`
+   - Folder: `/root`
+6. Save.
+
+Your app will be available at:
+
+```text
+https://yourusername.github.io/azerbaycan-radio/
+```
+
+## Notes
+
+This is an aesthetic tribute to 2000s car audio head units that were popular in Azerbaijan. It is not affiliated with Pioneer or any audio brand.
+
+Some stations may not play because public radio streams can be broken, blocked, or changed.
+
+
+## v1.1 CSS loading fix
+
+This version uses versioned local asset filenames:
+
+```text
+style-v1-1.css
+app-v1-1.js
+```
+
+The original `style.css` and `app.js` are also included as fallback copies.
+
+If the page appears unstyled, make sure all files are uploaded to the root of the GitHub repository, not inside an extra folder.
