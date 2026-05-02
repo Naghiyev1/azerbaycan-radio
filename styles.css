@@ -7,20 +7,20 @@
 }
 
 :root {
-  --bg: #070b12;
-  --panel: #0b0f17;
-  --panel-2: #111827;
-  --face: #05070b;
-  --chrome: #a7b0bf;
-  --chrome-dark: #46505e;
-  --ink: #eef6ff;
-  --muted: #93a4b8;
-  --blue: #27a8ff;
-  --blue-2: #7dd3fc;
-  --blue-soft: rgba(39, 168, 255, 0.16);
-  --red: #ef4444;
-  --border: #273244;
-  --shadow: 0 32px 90px rgba(0, 0, 0, 0.58);
+  --bg: #c7d2e4;
+  --panel: #d8e0ec;
+  --panel-2: #b7c2d2;
+  --face: #0b1020;
+  --chrome: #f3f4f6;
+  --chrome-dark: #64748b;
+  --ink: #07111f;
+  --muted: #475569;
+  --blue: #0284c7;
+  --blue-2: #0369a1;
+  --blue-soft: rgba(2, 132, 199, 0.14);
+  --red: #dc2626;
+  --border: #94a3b8;
+  --shadow: 0 32px 80px rgba(15, 23, 42, 0.22);
 }
 
 body.night {
@@ -35,7 +35,9 @@ body.night {
   --blue: #38bdf8;
   --blue-2: #bae6fd;
   --blue-soft: rgba(56, 189, 248, 0.14);
+  --red: #ef4444;
   --border: #172033;
+  --shadow: 0 32px 90px rgba(0, 0, 0, 0.58);
 }
 
 body {
@@ -43,6 +45,13 @@ body {
   min-height: 100vh;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(2, 132, 199, 0.22), transparent 34rem),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.34), transparent 30rem),
+    linear-gradient(145deg, #e2e8f0, var(--bg) 70%);
+}
+
+body.night {
   background:
     radial-gradient(circle at top left, rgba(39, 168, 255, 0.16), transparent 34rem),
     radial-gradient(circle at bottom right, rgba(125, 211, 252, 0.08), transparent 30rem),
@@ -735,4 +744,82 @@ input:focus {
   .disc-slot {
     grid-template-columns: 1fr;
   }
+}
+
+
+/* v1.2 stronger day/night mode */
+
+body:not(.night) .head-unit {
+  background:
+    linear-gradient(145deg, #e5e7eb, #94a3b8 62%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.28) 0 1px, transparent 1px 8px);
+  border-color: #cbd5e1;
+}
+
+body:not(.night) .left-control,
+body:not(.night) .right-control {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.5), rgba(148,163,184,0.32));
+  border-color: rgba(15,23,42,0.08);
+}
+
+body:not(.night) .station-card {
+  background:
+    linear-gradient(145deg, rgba(248,250,252,0.98), rgba(203,213,225,0.92));
+  border-color: #cbd5e1;
+  color: #07111f;
+}
+
+body:not(.night) .stats-strip div {
+  background: rgba(255,255,255,0.42);
+  border-color: #cbd5e1;
+}
+
+body:not(.night) .disc-slot {
+  background:
+    linear-gradient(180deg, #dbe4ef, #aebccc);
+  border-color: #cbd5e1;
+}
+
+body:not(.night) .slot-line {
+  background: #111827;
+}
+
+body:not(.night) .memory,
+body:not(.night) .preset,
+body:not(.night) .controls button,
+body:not(.night) .theme-toggle {
+  background:
+    linear-gradient(180deg, #f8fafc, #cbd5e1);
+  color: #07111f;
+  border-color: #94a3b8;
+}
+
+body:not(.night) .memory.active,
+body:not(.night) .preset.active {
+  background: linear-gradient(180deg, #7dd3fc, #0284c7 65%, #0369a1);
+  color: #03121f;
+}
+
+body:not(.night) input {
+  background: #f8fafc;
+  color: #07111f;
+  border-color: #94a3b8;
+}
+
+body:not(.night) .display-panel {
+  background:
+    radial-gradient(circle at top, rgba(125, 211, 252, 0.20), transparent 16rem),
+    linear-gradient(180deg, #08203a, #020617);
+}
+
+body:not(.night) .subtitle,
+body:not(.night) .station-country,
+body:not(.night) .station-tags,
+body:not(.night) .stats-strip span {
+  color: #475569;
+}
+
+body.night .theme-toggle {
+  box-shadow: 0 0 24px rgba(56, 189, 248, 0.18), inset 0 1px 0 rgba(255,255,255,0.08);
 }
