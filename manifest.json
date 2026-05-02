@@ -1,0 +1,19 @@
+{
+  "name": "Azərbaycan Radio",
+  "short_name": "AZ Radio",
+  "description": "Azərbaycan radio stansiyaları üçün avtomobil audio sistemi üslubunda pulsuz web radio player.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#070b12",
+  "theme_color": "#05080d",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
