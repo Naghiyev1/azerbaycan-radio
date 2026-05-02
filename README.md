@@ -58,3 +58,17 @@ https://yourusername.github.io/azerbaycan-radio/
 This is an aesthetic tribute to 2000s car audio head units that were popular in Azerbaijan. It is not affiliated with Pioneer or any audio brand.
 
 Some stations may not play because public radio streams can be broken, blocked, or changed.
+
+
+## v1.1 CSS loading fix
+
+This version uses versioned local asset filenames:
+
+```text
+style-v1-1.css
+app-v1-1.js
+```
+
+The original `style.css` and `app.js` are also included as fallback copies.
+
+If the page appears unstyled, make sure all files are uploaded to the root of the GitHub repository, not inside an extra folder.
