@@ -403,6 +403,7 @@ function applyNightMode(mode) {
   const safeMode = mode === "on" ? "on" : "off";
   document.body.classList.toggle("night", safeMode === "on");
   themeToggle.textContent = safeMode === "on" ? "Day Mode" : "Night Mode";
+  themeToggle.setAttribute("aria-pressed", safeMode === "on" ? "true" : "false");
   localStorage.setItem("azerbaycanRadioNight", safeMode);
   nightMode = safeMode;
 }
