@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Azərbaycan Radio</title>
+  <meta
+    name="description"
+    content="Azərbaycan radio stansiyaları üçün avtomobil audio sistemi üslubunda pulsuz web radio player."
+  />
+  <meta name="theme-color" content="#05080d" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="dashboard">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Azərbaycan radioları · pulsuz web player</p>
+        <h1>Azərbaycan Radio</h1>
+        <p class="subtitle">
+          2000-ci illərin avtomobil audio sistemi ruhunda Azərbaycan radiolarını dinlə.
+          Preset düymələri, favoritlər, son dinlənənlər və axtarış.
+        </p>
+      </div>
+
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Tema dəyiş">
+        Night Mode
+      </button>
+    </section>
+
+    <section class="head-unit" aria-label="Radio player">
+      <div class="brand-strip">
+        <span>SUPER TUNER</span>
+        <span>AZ · FM</span>
+        <span>RDS READY</span>
+      </div>
+
+      <div class="unit-main">
+        <div class="left-control">
+          <button id="powerButton" class="rotary-knob" type="button" aria-label="Stop">
+            <span>VOL</span>
+          </button>
+          <small>POWER / STOP</small>
+        </div>
+
+        <div class="display-panel">
+          <div class="display-glow"></div>
+
+          <div class="display-top">
+            <div id="displayLogo" class="display-logo">AZ</div>
+            <div class="display-copy">
+              <div class="display-label">FM · STEREO · LOCAL</div>
+              <div id="currentStation" class="display-station">STANSİYA SEÇ</div>
+              <div id="currentMeta" class="display-meta">Azərbaycan · Hazır</div>
+            </div>
+          </div>
+
+          <div class="spectrum" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span>
+          </div>
+
+          <div class="frequency-row">
+            <span>87.5</span><span>90</span><span>94</span><span>98</span><span>102</span><span>108</span>
+          </div>
+
+          <div class="frequency-track">
+            <div id="needle" class="needle"></div>
+          </div>
+        </div>
+
+        <div class="right-control">
+          <button id="playerFavoriteButton" class="fav-knob" type="button" disabled aria-label="Favoritə əlavə et">★</button>
+          <small>FAV</small>
+        </div>
+      </div>
+
+      <div class="disc-slot">
+        <div class="slot-line"></div>
+        <strong id="statusText">Radiolar yüklənir...</strong>
+      </div>
+
+      <audio id="audioPlayer" controls></audio>
+
+      <div class="memory-row" aria-label="Preset düymələri">
+        <button class="memory active" type="button" data-memory="0">1</button>
+        <button class="memory" type="button" data-memory="1">2</button>
+        <button class="memory" type="button" data-memory="2">3</button>
+        <button class="memory" type="button" data-memory="3">4</button>
+        <button class="memory" type="button" data-memory="4">5</button>
+        <button class="memory" type="button" data-memory="5">6</button>
+      </div>
+
+      <div class="preset-row" aria-label="Filtrlər">
+        <button class="preset active" type="button" data-filter="">HAMISI</button>
+        <button class="preset" type="button" data-filter="__curated">SEÇİLMİŞ</button>
+        <button class="preset" type="button" data-filter="__favorites">FAV</button>
+        <button class="preset" type="button" data-filter="__recent">SON</button>
+        <button class="preset" type="button" data-filter="news">XƏBƏR</button>
+        <button class="preset" type="button" data-filter="music">MUSİQİ</button>
+        <button class="preset" type="button" data-filter="pop">POP</button>
+        <button class="preset" type="button" data-filter="talk">SÖHBƏT</button>
+      </div>
+
+      <div class="controls">
+        <input id="searchInput" type="search" placeholder="Radio axtar..." />
+        <button id="searchButton" type="button">Axtar</button>
+      </div>
+    </section>
+
+    <section class="stats-strip" aria-label="Statistika">
+      <div>
+        <strong id="stationCount">0</strong>
+        <span>radio</span>
+      </div>
+      <div>
+        <strong id="favoriteCount">0</strong>
+        <span>favorit</span>
+      </div>
+      <div>
+        <strong>AZ</strong>
+        <span>Azərbaycan</span>
+      </div>
+    </section>
+
+    <section id="stationsGrid" class="stations-grid" aria-live="polite"></section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
